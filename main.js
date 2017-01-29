@@ -81,7 +81,7 @@ function walkingDude(game, spritesheet) {
     this.animation = new Animation(spritesheet, 130, 222, 5, 0.20, 5, true, .5);
     this.x = 750;
     this.y = 308;
-    this.speed = 40;
+    this.speed = 100;
     this.game = game;
     this.ctx = game.ctx;
 }
@@ -93,7 +93,7 @@ walkingDude.prototype.draw = function () {
 walkingDude.prototype.update = function () {
     if (this.animation.elapsedTime < this.animation.totalTime * 8 / 14)
         this.x -= this.game.clockTick * this.speed;
-    if (this.x < 0) this.x += 130;
+    if (this.x < -130) this.x += 930;
 }
 
 // inheritance 
